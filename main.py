@@ -4,9 +4,8 @@ import os
 import sys
 
 def main():
-    # Vérifie que le dossier existe
     if not os.path.isdir(config.PATH_TO_XML_FILES):
-        print(f"Erreur : le dossier {config.PATH_TO_XML_FILES} n'existe pas.")
+        print(f"Error : Folder {config.PATH_TO_XML_FILES} doesn't exist.")
         sys.exit(1)
 
     try:
