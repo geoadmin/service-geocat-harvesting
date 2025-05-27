@@ -18,7 +18,8 @@ def main():
             config.PARAMETER_UUID_PROCESSING,
             str(config.PARAMETER_GROUP),
             config.PARAMETER_REJECT_IF_INVALID,
-            config.PARAMETER_PUBLISH_TO_ALL
+            config.PARAMETER_PUBLISH_TO_ALL,
+            config.UPDATE_DATE_STAMP
         )
         print("Upload completed.")
     except Exception as e:
