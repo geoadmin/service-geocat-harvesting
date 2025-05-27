@@ -1,0 +1,36 @@
+site_name: GeoCAT Harvesting
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Automation: automation.md
+  - Parameters: parameters.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/termynal@0.0.1/css/termynal.css
+
+extra_javascript:
+  - https://unpkg.com/termynal@0.0.1/js/termynal.js
+  - js/custom.js
+
+repo_url: https://github.com/geoadmin/service-geocat-harvesting
+repo_name: geoadmin/service-geocat-harvesting
