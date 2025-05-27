@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -92,7 +91,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Geopycat" class="md-header__button md-logo" aria-label="Geopycat" data-md-component="logo">
       
-  <img src="../img/geopycat-icon.png" alt="logo">
+  <img src="../img/geocat-incon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -257,7 +256,7 @@
         <a href="../geocat/" class="md-tabs__link">
           
   
-  Reference
+  Automation
 
         </a>
       </li>
@@ -275,7 +274,7 @@
         <a href="../cli_tools/Backup_geocat/" class="md-tabs__link">
           
   
-  CLI Tools
+  Parameters
 
         </a>
       </li>
@@ -307,7 +306,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Geopycat" class="md-nav__button md-logo" aria-label="Geopycat" data-md-component="logo">
       
-  <img src="../img/geopycat-icon.png" alt="logo">
+  <img src="../img/geocat-incon.png" alt="logo">
 
     </a>
     Geopycat
@@ -440,7 +439,7 @@
             
   
   <span class="md-ellipsis">
-    Reference
+    Automation
   </span>
   
 
@@ -450,7 +449,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Reference
+            Automation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -506,7 +505,7 @@
             
   
   <span class="md-ellipsis">
-    CLI Tools
+    Parameters
   </span>
   
 
@@ -516,7 +515,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            CLI Tools
+            Parameters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -657,49 +656,103 @@
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
-                
-                  
+                <h1>🚦 Getting Started</h1>
 
-  
-  
+  <section>
+    <h2>Requirements</h2>
+    <ul>
+      <li>🐍 <strong>Python 3.8+</strong></li>
+      <li>👤 A geocat.ch user account with write permissions on the target group</li>
+      <li>📦 Python dependencies:
+        <ul>
+          <li><code>requests</code></li>
+          <li><code>python-dotenv</code> (if you use a <code>.env</code> file for credentials)</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Installation</h2>
+    <ol>
+      <li><strong>Clone the repository or copy the files into a folder.</strong></li>
+      <li><strong>Install dependencies:</strong>
+        <pre><code>pip install requests python-dotenv</code></pre>
+      </li>
+      <li><strong>Configure parameters in <code>config.py</code> and <code>.env</code>:</strong>
+        <ul>
+          <li>
+            <code>.env</code>:
+            <pre><code>GEOCAT_USERNAME=your_username
+GEOCAT_PASSWORD=your_password</code></pre>
+          </li>
+          <li>
+            <code>config.py</code>: adjust paths, group, and other parameters as needed.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Place your XML files to upload in the folder defined by <code>PATH_TO_XML_FILES</code> in <code>config.py</code>.</strong>
+      </li>
+    </ol>
+    <p>
+      👉 <a href="../parameters/">See all parameters and how to configure them</a>
+    </p>
+  </section>
 
-<h1 id="getting-started">Getting Started</h1>
-<h2 id="installation-requires-an-installation-of-git">Installation (requires an installation of git)</h2>
-<p>The package requires <code>python 3</code></p>
-<p><strong>Using pip</strong> - install from github</p>
-<p>
-<div class="termy" data-termynal>
-<span data-ty="input">pip install git+https://github.com/geoadmin/lib-geopycat.git</span>
-<span data-ty="progress"></span>
-<span data-ty>Installed</span>
-<span data-ty></span>
-</div></p>
-<p><strong>From swisstopo network</strong> - through proxy (using powershell)</p>
-<p>
-<div class="termy" data-termynal>
-<span data-ty>&amp; &quot;C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\pip3&quot; install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host github.com --proxy=proxy-bvcol.admin.ch:8080 git+https://github.com/geoadmin/lib-geopycat.git</span>
-<span data-ty></span>
-</div></p>
-<p><strong>Install an older version</strong></p>
-<p>
-<div class="termy" data-termynal>
-<span data-ty="input">pip install git+https://github.com/geoadmin/lib-geopycat.git@version</span>
-<span data-ty></span>
-</div></p>
+  <section>
+    <h2>Usage</h2>
+    <p>Simply run:</p>
+    <pre><code>python main.py</code></pre>
+    <p>The script will:</p>
+    <ul>
+      <li>✅ Check if the XML folder exists</li>
+      <li>🔐 Authenticate the user</li>
+      <li>⬆️ Upload each XML file</li>
+      <li>🕒 Update the revision date if <code>UPDATE_DATE_STAMP</code> is set to <code>True</code></li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Automation</h2>
+    <h3>On Linux</h3>
+    <p>Use <code>cron</code> to run the script at regular intervals:</p>
+    <pre><code>crontab -e</code></pre>
+    <p>Add for example:</p>
+    <pre><code>0 * * * * /usr/bin/python3 /path/to/main.py >> /path/to/cron.log 2>&1</code></pre>
 
+    <h3>On Windows</h3>
+    <p>Use the <strong>Task Scheduler</strong> to run the script automatically (see Windows documentation).</p>
+  </section>
 
+  <section>
+    <h2>Project Structure</h2>
+    <pre><code>.
+├── main.py
+├── upload_md.py
+├── config.py
+├── .env
+└── [XML folder]
+</code></pre>
+  </section>
 
+  <section>
+    <h2>Logging</h2>
+    <p>Logs are displayed in the console. To redirect them to a file, run:</p>
+    <pre><code>python main.py >> log.txt 2>&1</code></pre>
+  </section>
 
+  <section>
+    <h2>Authors</h2>
+    <p>Script adapted and automated for geocat.ch by swisstopo.</p>
+  </section>
 
-
-
-
-
-
-
-                
+  <hr>
+  <p>
+    <strong>Note:</strong><br>
+    This script updates the <code>dateStamp</code> field of each metadata record after upload if the option is enabled.<br>
+    Make sure your user has the necessary permissions on the target group.
+  </p>
               </article>
             </div>
           
