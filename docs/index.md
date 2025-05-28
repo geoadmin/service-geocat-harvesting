@@ -4,30 +4,24 @@
 
 ---
 
-<div class="grid cards" markdown>
+## 🚀 Getting Started
 
-- __🚀 Getting Started__
+Quick setup guide and installation instructions  
+[Get Started &rarr;](getting-started.md)
 
-  
-  Quick setup guide and installation instructions
+---
 
-  [:octicons-arrow-right-24: Get Started](getting-started.md)
+## 🤖 Automation
 
-- __🤖 Automation__
+Schedule automatic uploads with cron or Task Scheduler  
+[Automate &rarr;](automation.md)
 
-  
-  Schedule automatic uploads with cron or Task Scheduler
+---
 
-  [:octicons-arrow-right-24: Automate](automation.md)
+## ⚙️ Parameters
 
-- __⚙️ Parameters__
-
-  
-  All configuration options explained
-
-  [:octicons-arrow-right-24: Configure](parameters.md)
-
-</div>
+All configuration options explained  
+[Configure &rarr;](parameters.md)
 
 ---
 

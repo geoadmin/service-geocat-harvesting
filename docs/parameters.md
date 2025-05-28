@@ -18,11 +18,23 @@ GEOCAT_PASSWORD=s3cr3t
 
 ## 🛠️ Script Configuration (`config.py`)
 
+| Variable            | Required | Description             |
+|---------------------|----------|-------------------------|
+| `GEOCAT_USERNAME`   | Yes      |  |
+| `GEOCAT_PASSWORD`   | Yes      | Your geocat.ch password |
+| `API_URL`   | Yes      | url of the api. For Production: "https://www.geocat.ch/geonetwork/srv/api/" |
+| `PARAMETER_GROUP`   | Yes      | Group ID of your organisation (42 for Freiburg for example) |
+| `PARAMETER_UUID_PROCESSING`   | Yes      | Several options in case of uuid conflict: <br>- 'GENERATEUUID': create a new uuid for uploaded metadata records <br>- 'OVERWRITE': deletes the old metadata record with the same uuid and adds the new one <br>-'NOTHING': does nothing, record not uploaded  |
+| `REJECT_IF_INVALID`   | Yes      | If "True", accept metadata records not valid, if "False", only metadata records with valid schema is accepted |
+| `UPDATE_DATE_STAMP`   | Yes      | If true, update the metadata date stamp |
+
+
+Example:
 ```python
 # API endpoint
 API_URL = "https://geocat.ch/api"
 
-# Target group ID (must match your group permissions)
+# Target group ID (must match your group)
 PARAMETER_GROUP = 42
 
 # Metadata processing options
@@ -54,4 +66,4 @@ Options:
 ---
 
 **Tip:**  
-See [`config.py`](../config.py) for more details and default values.
+See [`config.py`](https://github.com/geoadmin/service-geocat-harvesting/blob/master/config.py) for more details and default values.

@@ -4,6 +4,11 @@
   --md-primary-fg-color--dark: #0088D4;
 }
 
+/* Change header background color */
+.md-header {
+  background-color: #2D7ABC !important; /* Remplace par ta couleur */
+}
+
 /* Termynal styling */
 .termynal {
   border-radius: 8px;

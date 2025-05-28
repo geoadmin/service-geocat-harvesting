@@ -10,7 +10,7 @@
     # Installation complete
     ```
 
-=== "Swisstopo network"
+=== "Adapt proxies"
 
     ```sh
     & "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\pip3" install --proxy=proxy-bvcol.admin.ch:8080 requests python-dotenv
