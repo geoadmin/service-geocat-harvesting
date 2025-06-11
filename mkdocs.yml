@@ -1,10 +1,22 @@
-site_name: GEOCAT HARVESTING
-site_favicon: assets/images/favicon.png
+site_name: geocat harvesting service
+site_description: Harvesting service for geocat.ch
+site_author: geocat team
 nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
-  - Automation: automation.md
-  - Parameters: parameters.md
+  - "🇬🇧 English":
+      - Home: index.md
+      - Getting Started: getting-started.md
+      - Automation: automation.md
+      - Parameters: parameters.md
+  - "🇫🇷 Français":
+      - Accueil: fr/index.md
+      - Prise en main: fr/getting-started.md
+      - Automatisation: fr/automation.md
+      - Paramètres: fr/parameters.md
+  - "🇩🇪 Deutsch":
+      - Startseite: de/index.md
+      - Erste Schritte: de/getting-started.md
+      - Automatisierung: de/automation.md
+      - Parameter: de/parameters.md
 
 theme:
   name: material
@@ -29,10 +41,6 @@ theme:
 extra_css:
   - assets/stylesheets/extra.css
   - https://unpkg.com/termynal@0.0.1/css/termynal.css
-
-extra_javascript:
-  - https://unpkg.com/termynal@0.0.1/js/termynal.js
-  - assets/js/custom.js
 
 repo_url: https://github.com/geoadmin/service-geocat-harvesting
 repo_name: service-geocat-harvesting

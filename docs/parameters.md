@@ -18,31 +18,26 @@ GEOCAT_PASSWORD=s3cr3t
 
 ## 🛠️ Script Configuration (`config.py`)
 
-| Variable            | Required | Description             |
-|---------------------|----------|-------------------------|
-| `GEOCAT_USERNAME`   | Yes      |  |
-| `GEOCAT_PASSWORD`   | Yes      | Your geocat.ch password |
-| `API_URL`   | Yes      | url of the api. For Production: "https://www.geocat.ch/geonetwork/srv/api/" |
-| `PARAMETER_GROUP`   | Yes      | Group ID of your organisation (42 for Freiburg for example) |
-| `PARAMETER_UUID_PROCESSING`   | Yes      | Several options in case of uuid conflict: <br>- 'GENERATEUUID': create a new uuid for uploaded metadata records <br>- 'OVERWRITE': deletes the old metadata record with the same uuid and adds the new one <br>-'NOTHING': does nothing, record not uploaded  |
-| `REJECT_IF_INVALID`   | Yes      | If "True", accept metadata records not valid, if "False", only metadata records with valid schema is accepted |
-| `UPDATE_DATE_STAMP`   | Yes      | If true, update the metadata date stamp |
-
+| Parameter                   | Required | Description                                                                                                    | Example/Default                                      |
+|-----------------------------|----------|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| `API_URL`                   | Yes      | Geocat API endpoint                                                                                            | `"https://www.geocat.ch/geonetwork/srv/api/"`        |
+| `PARAMETER_GROUP`           | Yes      | Target group ID for your organisation (e.g. 42 for Freiburg)                                                   | `42`                                                 |
+| `PARAMETER_UUID_PROCESSING` | Yes      | What to do in case of UUID conflict:<br>- `GENERATEUUID`: create a new UUID<br>- `OVERWRITE`: replace existing<br>- `NOTHING`: skip upload | `"OVERWRITE"`                                        |
+| `REJECT_IF_INVALID`         | Yes      | If `True`, accept invalid metadata; if `False`, only valid records are accepted                                | `True`                                               |
+| `UPDATE_DATE_STAMP`         | Yes      | If `True`, update the metadata date stamp after upload                                                         | `True`                                               |
+| `PARAMETER_PUBLISH_TO_ALL`  | No       | If `True`, publish to all (default: `False`)                                                                   | `False`                                              |
+| `PATH_TO_XML_FILES`         | Yes      | Path to the folder containing your XML files                                                                   | `"./metadata"`                                       |
 
 Example:
 ```python
-# API endpoint
-API_URL = "https://geocat.ch/api"
-
-# Target group ID (must match your group)
+# config.py
+API_URL = "https://www.geocat.ch/geonetwork/srv/api/"
 PARAMETER_GROUP = 42
-
-# Metadata processing options
 PARAMETER_UUID_PROCESSING = "OVERWRITE"
-UPDATE_DATE_STAMP = True
-
-# Validation strictness
 REJECT_IF_INVALID = True
+UPDATE_DATE_STAMP = True
+PARAMETER_PUBLISH_TO_ALL = False
+PATH_TO_XML_FILES = "./metadata"
 ```
 
 ---

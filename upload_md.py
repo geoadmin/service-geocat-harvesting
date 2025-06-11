@@ -24,6 +24,15 @@ def upload_md(
     session = requests.Session()
     session.auth = (GEOCAT_USERNAME, GEOCAT_PASSWORD)
 
+    http_proxy = os.environ.get("HTTP_PROXY")
+    https_proxy = os.environ.get("HTTPS_PROXY")
+    if http_proxy or https_proxy:
+        session.proxies.update({
+            "http": http_proxy or "",
+            "https": https_proxy or ""
+        })
+        logging.info(f"Using proxies: {session.proxies}")
+
     try:
         response = session.get(f"{API_URL}/me", headers={"accept": "application/json"})
         response.raise_for_status()
