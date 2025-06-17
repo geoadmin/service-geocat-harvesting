@@ -1,6 +1,6 @@
 # geocat Harvesting Script
 
-This project automates the upload of XML metadata files to the geocat.ch (GeoNetwork) API and optionally updates their revision date.
+This project automates the upload of XML metadata records to the geocat.ch (GeoNetwork) API and optionally updates their DateStamp (last update of the metadata record).
 
 ## Features
 
