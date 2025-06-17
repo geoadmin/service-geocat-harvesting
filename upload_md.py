@@ -19,13 +19,15 @@ def upload_md(
     PARAMETER_GROUP,
     PARAMETER_REJECT_IF_INVALID,
     PARAMETER_PUBLISH_TO_ALL,
-    UPDATE_DATE_STAMP
+    UPDATE_DATE_STAMP,
+    PROXY_HTTP=None,
+    PROXY_HTTPS=None
 ):
     session = requests.Session()
     session.auth = (GEOCAT_USERNAME, GEOCAT_PASSWORD)
 
-    http_proxy = os.environ.get("HTTP_PROXY")
-    https_proxy = os.environ.get("HTTPS_PROXY")
+    http_proxy = os.environ.get("HTTP_PROXY") or PROXY_HTTP
+    https_proxy = os.environ.get("HTTPS_PROXY") or PROXY_HTTPS
     if http_proxy or https_proxy:
         session.proxies.update({
             "http": http_proxy or "",
